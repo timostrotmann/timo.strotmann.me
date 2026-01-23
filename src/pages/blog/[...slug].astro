@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import '../../styles/global.css';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -16,5 +17,7 @@ const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data}>
-	<Content />
+	<div class="prose max-w-none text-[rgb(var(--gray-dark))] prose-headings:text-[rgb(var(--black))] prose-a:text-[rgb(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-strong:text-[rgb(var(--black))] prose-code:text-[rgb(var(--black))] prose-hr:border-[rgba(var(--gray),0.4)]">
+		<Content />
+	</div>
 </BlogPost>
