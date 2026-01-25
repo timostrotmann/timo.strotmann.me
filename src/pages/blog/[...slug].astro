@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import '../../styles/global.css';
-
+import readingTime from 'reading-time';
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
@@ -14,9 +14,10 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const stats = readingTime(post.body ?? '');
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} readingTime={stats.text}>
 	<div class="prose max-w-none text-[rgb(var(--gray-dark))] prose-headings:text-[rgb(var(--black))] prose-a:text-[rgb(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-strong:text-[rgb(var(--black))] prose-code:text-[rgb(var(--black))] prose-hr:border-[rgba(var(--gray),0.4)]">
 		<Content />
 	</div>

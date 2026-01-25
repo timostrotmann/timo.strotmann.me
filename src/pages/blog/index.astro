@@ -6,6 +6,7 @@ import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import readingTime from 'reading-time';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -44,7 +45,11 @@ const posts = (await getCollection('blog')).sort(
 										{post.data.title}
 									</h4>
 									<p class="m-0 text-xs text-[rgb(var(--gray))] transition duration-200 ">
-										<FormattedDate date={post.data.pubDate} />
+										<span class="inline-flex flex-wrap items-center gap-2">
+											<FormattedDate date={post.data.pubDate} />
+											<span aria-hidden="true">•</span>
+												<span>{readingTime(post.body ?? '').text}</span>
+										</span>
 									</p>
 									<p class="mt-2 line-clamp-3 text-sm">
 										{post.data.description}
