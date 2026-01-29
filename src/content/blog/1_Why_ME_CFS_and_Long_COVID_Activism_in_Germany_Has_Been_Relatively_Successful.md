@@ -25,3 +25,8 @@ One of the reasons for the relative success of ME/CFS and Long COVID activism in
 
 __Note:__
 While infections are a major and well-documented trigger for ME/CFS and related conditions, they are not the only ones. ME/CFS can also be triggered by other events such as physical trauma, surgery, or other severe physiological stressors. Ensuring that these non-infectious triggers are not overlooked or deprioritized remains an ongoing challenge in research, clinical care, and advocacy. A comprehensive understanding of ME/CFS must include all patients, regardless of how their illness was triggered.
+
+[Part 1: Why ME/CFS and Long COVID Activism in Germany Has Been Relatively Successful](/blog/1_why_me_cfs_and_long_covid_activism_in_germany_has_been_relatively_successful/)
+
+
+[Part 2: Why ME/CFS and Long COVID Activism in Germany Has Been Relatively Successful](/blog/2_why_me_cfs_and_long_covid_activism_in_germany_has_been_relatively_successful/)
