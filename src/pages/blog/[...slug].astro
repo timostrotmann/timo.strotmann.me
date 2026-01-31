@@ -18,7 +18,7 @@ const stats = readingTime(post.body ?? '');
 ---
 
 <BlogPost {...post.data} readingTime={stats.text}>
-	<div class="prose max-w-none text-[rgb(var(--gray-dark))] prose-headings:text-[rgb(var(--black))] prose-a:text-[rgb(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-strong:text-[rgb(var(--black))] prose-code:text-[rgb(var(--black))] prose-hr:border-[rgba(var(--gray),0.4)]">
+	<div class="prose max-w-none text-[rgb(var(--gray-dark))] prose-headings:text-[rgb(var(--black))] prose-a:text-[rgb(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-strong:text-[rgb(var(--black))] prose-code:text-[rgb(var(--black))] prose-hr:border-[rgba(var(--gray),0.4)] prose-blockquote:text-[rgb(var(--black))]">
 		<Content />
 	</div>
 </BlogPost>
