@@ -2,7 +2,7 @@
 title: 'OpenClaw - Not AGI, But Still Pretty Cool'
 description: 'What happens when you give an AI agent actual tools, persistent memory, and the ability to take action in the real world? Not artificial general intelligence, but something surprisingly useful.'
 pubDate: 'Feb 05 2026'
-heroImage: '../../assets/openclaw-not-agi-but-still-pretty-cool.png'
+heroImage: '../../assets/openclaw-not-agi-but-still-pretty-cool.jpg'
 ---
 
 There is a certain disconnect between how AI is portrayed in the media and how it actually works in practice. Headlines speak of superintelligent systems on the verge of replacing human cognition. Reality is more mundane, but in many ways more interesting.
@@ -42,6 +42,38 @@ Need to fill out a form, extract data from a website, or automate a repetitive w
 OpenClaw is not magic. It makes mistakes. It sometimes misunderstands context. It can confidently execute the wrong command if you are not precise. It requires configuration, maintenance, and occasional babysitting.
 
 The underlying language models have their own limitations—hallucinations, context window constraints, inconsistent reasoning. OpenClaw inherits all of these. It is a tool that amplifies capability, not a replacement for human judgment.
+
+## The Security Elephant in the Room
+
+Let's be honest: giving an AI agent shell access, file system control, and the ability to send messages on your behalf is a security researcher's nightmare. OpenClaw raises legitimate concerns that remain largely unresolved.
+
+**Prompt Injection**
+
+If the agent processes untrusted input—emails, messages, web content—a malicious payload could hijack its behavior. Imagine receiving an email that instructs your AI to forward sensitive files. The line between "helpful assistant following instructions" and "compromised system executing attacker commands" becomes uncomfortably thin.
+
+**Credential Exposure**
+
+API keys, tokens, and passwords flow through configuration files and environment variables. The agent itself becomes a high-value target. A single vulnerability in the framework, a compromised skill, or a leaked memory file could expose everything.
+
+**Autonomous Action Without Oversight**
+
+The more capable the agent, the more damage it can do. Scheduled tasks, proactive behaviors, and background operations run without real-time human approval. A misconfigured cron job or a misunderstood instruction could delete files, send embarrassing messages, or commit code to production.
+
+**Supply Chain Risks**
+
+Skills can be installed from registries. Each skill is effectively third-party code that runs with the agent's full permissions. One malicious or compromised skill could exfiltrate data, install backdoors, or manipulate the agent's behavior.
+
+**Memory as Attack Surface**
+
+Persistent memory means persistent vulnerabilities. If an attacker can inject content into the agent's memory files, that content influences future behavior indefinitely. Poisoned memories could establish false contexts, fake permissions, or social engineering hooks.
+
+**No Real Sandboxing**
+
+While OpenClaw supports sandboxed execution for some operations, the default setup runs with significant host access. Most users prioritize convenience over isolation. The attack surface is vast.
+
+These are not hypothetical concerns. They are fundamental tensions in the design of autonomous AI agents. OpenClaw provides some mitigation tools—allowlists, confirmation prompts, sandboxing options—but the responsibility falls on the user to configure them correctly. Most will not.
+
+This is the trade-off: capability for risk. Whether that trade-off makes sense depends entirely on your threat model and your tolerance for the unknown.
 
 ## Why It Matters Anyway
 
